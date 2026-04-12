@@ -17,7 +17,7 @@ app = FastAPI(title="Sistema de Cashback")
 # 3. Configura o CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], 
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -44,22 +44,24 @@ def exibir_site():
 @app.post("/calcular")
 def calcular(consulta: schemas.ConsultaCashBack, request: Request, db: Session = Depends(get_db)):
     ip_usuario = request.client.host
-    
+
     # Na rota /calcular:
     cashback_gerado = cash_back.calcular_cash_back(consulta.valor_compra, consulta.cliente)
     operacoes.criar_registro_historico(db, consulta, ip_usuario, cashback_gerado)
 
     # Na rota /historico:
     registros = operacoes.buscar_historico_por_ip(db, ip_usuario)
-    
+
     return {"cashback": cashback_gerado}
 
 # Rota para buscar o histórico (GET)
 @app.get("/historico", response_model=List[schemas.HistoricoResponse])
 def historico(request: Request, db: Session = Depends(get_db)):
     ip_usuario = request.client.host
-    
+
     # Manda o operário buscar as linhas desse IP no banco
     registros = operacoes.buscar_historico_por_ip(db, ip_usuario)
-    
+
     return registros
+
+#haduken
