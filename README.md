@@ -42,7 +42,7 @@ O projeto segue uma estrutura modular para facilitar a manutenção e escalabili
 
 1. **Clonar o repositório:**
    ```bash
-   git clone [https://github.com/seu-usuario/API_teste_estagio.git](https://github.com/seu-usuario/API_teste_estagio.git)
+   git clone https://github.com/seu-usuario/API_teste_estagio.git
    cd API_teste_estagio
 
 2. **Subir o Banco de Dados (Docker):**
