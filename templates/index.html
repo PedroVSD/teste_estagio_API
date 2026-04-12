@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Calculadora de Cashback</title>
+        <link rel="stylesheet" href="/static/css/style.css" />
+    </head>
+    <body>
+        <h1>Sistema de Cashback</h1>
+
+        <div class="card">
+            <h2>Simular Nova Compra</h2>
+            <form id="cashbackForm">
+                <div class="form-group">
+                    <label for="cliente">Tipo de Cliente:</label>
+                    <select id="cliente" required>
+                        <option value="" disabled selected>
+                            Selecione o tipo
+                        </option>
+                        <option value="Normal">Normal</option>
+                        <option value="VIP">VIP</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="valor">Valor Pago (R$):</label>
+                    <input
+                        type="number"
+                        id="valor"
+                        step="0.01"
+                        min="0.01"
+                        placeholder="Ex: 150.00"
+                        required
+                    />
+                </div>
+
+                <button type="submit">Calcular Cashback</button>
+            </form>
+
+            <div id="resultado-box">
+                <div>Cashback Gerado:</div>
+                <div id="resultado-valor">R$ 0,00</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Seu Histórico de Consultas</h2>
+            <table id="historyTable">
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Valor da Compra</th>
+                        <th>Cashback</th>
+                    </tr>
+                </thead>
+                <tbody id="historyBody">
+                    <tr>
+                        <td colspan="3" class="empty-state">
+                            Carregando histórico...
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script src="/static/js/index.js"></script>
+    </body>
+</html>
