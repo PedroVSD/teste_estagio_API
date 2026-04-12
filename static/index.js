@@ -41,7 +41,7 @@ function renderizarTabela(dados) {
     tr.innerHTML = `
             <td><span style="font-weight: ${item.cliente === "VIP" ? "bold" : "normal"}">${item.cliente}</span></td>
             <td>${formatarMoeda(item.valor_compra)}</td>
-            <td style="color: var(--success); font-weight: bold;">${formatarMoeda(item.cashback)}</td>
+            <td style="color: var(--success); font-weight: bold;">${formatarMoeda(item.cash_back)}</td>
         `;
     historyBody.appendChild(tr);
   });
@@ -59,7 +59,10 @@ form.addEventListener("submit", async (e) => {
     const response = await fetch(`${API_BASE_URL}/calcular`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ cliente: cliente, valor_compra: valor }),
+      body: JSON.stringify({ 
+        cliente: cliente, 
+        valor_compra: valor 
+      }),
     });
 
     if (!response.ok) throw new Error("Erro ao calcular");

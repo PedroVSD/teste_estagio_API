@@ -1,0 +1,10 @@
+services:
+  db:
+    image: postgres:15
+    container_name: postgres_cashback
+    environment:
+      POSTGRES_USER: admin           
+      POSTGRES_PASSWORD: senha123    
+      POSTGRES_DB: cashback_db       
+    ports:
+      - "5432:5432"
