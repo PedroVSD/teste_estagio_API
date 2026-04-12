@@ -7,7 +7,7 @@ Este projeto foi desenvolvido como um teste técnico para [Nome da Empresa/Vaga]
 ## Tecnologias Utilizadas
 
 * **Backend:** [FastAPI](https://fastapi.tiangolo.com/) (Python 3.14)
-* **Gerenciamento de Pacotes:** [uv](https://github.com/astral-sh/uv) (Extremamente rápido!)
+* **Gerenciamento de Pacotes:** [uv](https://github.com/astral-sh/uv)
 * **Banco de Dados:** [PostgreSQL](https://www.postgresql.org/)
 * **ORM:** [SQLAlchemy](https://www.sqlalchemy.org/)
 * **Frontend:** HTML5, CSS3 e JavaScript Puro (Vanilla JS)
