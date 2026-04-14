@@ -13,7 +13,7 @@ const formatarMoeda = (valor) => {
   }).format(valor);
 };
 
-// Função para buscar o histórico na API
+// Buscar o histórico na API
 async function carregarHistorico() {
   try {
     const response = await fetch(`${API_BASE_URL}/historico`);
@@ -59,9 +59,9 @@ form.addEventListener("submit", async (e) => {
     const response = await fetch(`${API_BASE_URL}/calcular`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ 
-        cliente: cliente, 
-        valor_compra: valor 
+      body: JSON.stringify({
+        cliente: cliente,
+        valor_compra: valor,
       }),
     });
 

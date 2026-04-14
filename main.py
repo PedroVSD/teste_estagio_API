@@ -23,10 +23,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# 4. Libera a pasta "static" (onde estão seu CSS e JS)
+# 4. Libera a pasta "static" (CSS e JS)
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-# 5. Função injetora de dependência (Garante que cada requisição tenha sua própria sessão no banco)
+# 5. Função injetora de dependência "cada requisição tenha sua própria sessão no banco"
 def get_db():
     db = SessionLocal()
     try:
@@ -45,11 +45,9 @@ def exibir_site():
 def calcular(consulta: schemas.ConsultaCashBack, request: Request, db: Session = Depends(get_db)):
     ip_usuario = request.client.host
 
-    # Na rota /calcular:
     cashback_gerado = cash_back.calcular_cash_back(consulta.valor_compra, consulta.cliente)
     operacoes.criar_registro_historico(db, consulta, ip_usuario, cashback_gerado)
 
-    # Na rota /historico:
     registros = operacoes.buscar_historico_por_ip(db, ip_usuario)
 
     return {"cashback": cashback_gerado}
