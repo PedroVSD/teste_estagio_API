@@ -69,6 +69,7 @@ print(cash_back(600, 0.2, 'VIP'))
 print(cash_back(600, 0.1, 'VIP'))
 print(cash_back(600, 0.2, 'Normal'))
 print(cash_back(600, 0.1, 'Normal'))
+print(cash_back(600, 0.15, 'VIP'))
 
 # 26.4
 # 59.4
