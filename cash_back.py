@@ -22,11 +22,9 @@ def calcular_cash_back(valor_compra: float, cliente: str) -> float:
     else:
         cash_back_final = cash_back_atual
 
-    # Retorna o valor arredondado com 2 casas decimais
     return round(cash_back_final, 2)
 
-# --- Testes Unitários ---
-# Obs: Ajustei o nome da função no print para bater com o nome da função (calcular_cash_back)
+#Testes
 # print(calcular_cash_back(600, 0.2, 'VIP'))    # Esperado: 26.4
 # print(calcular_cash_back(600, 0.1, 'VIP'))    # Esperado: 59.4
 # print(calcular_cash_back(600, 0.2, 'Normal')) # Esperado: 24.0
